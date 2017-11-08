@@ -21,6 +21,16 @@ Prometheus
 docker rm -f redpill-prometheus-server
 docker rmi redpill/prometheus-server
 docker build -t redpill/prometheus-server prometheus/.
-docker run --name redpill-prometheus-server -d -p9090:9090 redpill/prometheus-server
+docker run --name redpill-prometheus-server -d -p 9090:9090 redpill/prometheus-server -config.file=/etc/prometheus/prometheus.yml -storage.local.path=/prometheus -storage.local.memory-chunks=10000
 docker logs -f redpill-prometheus-server
 ```
+
+## Getting Started
+Prometheus, Node Exporter and Grafana with Docker
+https://www.digitalocean.com/community/tutorials/how-to-install-prometheus-using-docker-on-ubuntu-14-04
+
+Prometheus
+https://prometheus.io/docs/introduction/overview/
+
+Grafana
+http://docs.grafana.org/
