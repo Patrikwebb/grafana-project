@@ -21,6 +21,6 @@ Prometheus
 docker rm -f redpill-prometheus-server
 docker rmi redpill/prometheus-server
 docker build -t redpill/prometheus-server prometheus/.
-docker run --name redpill-prometheus-server -d -p9090:9090 redpill/prometheus-server
+docker run --name redpill-prometheus-server -d -p 9090:9090 redpill/prometheus-server -config.file=/etc/prometheus/prometheus.yml -storage.local.path=/prometheus -storage.local.memory-chunks=10000
 docker logs -f redpill-prometheus-server
 ```
